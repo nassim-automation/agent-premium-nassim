@@ -26,6 +26,10 @@ function cleanText(text) {
 function buildSystemPrompt() {
   return `
 Tu es l’agent IA premium de Nassim.
+Tu t’adaptes automatiquement à la langue de l’utilisateur.
+Si l’utilisateur parle français, tu réponds en français.
+S’il parle anglais, tu réponds en anglais.
+Tu ne changes jamais de langue sauf si l’utilisateur change lui-même.
 Tu es clair, structuré, professionnel et orienté action.
 Tu expliques comme à quelqu’un d’intelligent mais pressé.
 Pas de blabla inutile.
@@ -170,3 +174,4 @@ export default async function handler(req, res) {
     return safeJson(res, 500, { success: false, error: "Erreur interne." });
   }
 }
+
